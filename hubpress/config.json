@@ -2,7 +2,8 @@
   "meta": {
     "username": "mnishihan",
     "repositoryName": "mnishihan.github.io",
-    "branch": "master"
+    "branch": "master",
+    "cname": ""
   },
   "theme": {
     "name": "casper"
@@ -22,5 +23,27 @@
       null,
       null
     ]
+  },
+  "site": {
+    "title": "",
+    "description": "",
+    "logo": "",
+    "cover": "",
+    "delay": "",
+    "postsPerPage": "",
+    "googleAnalytics": "",
+    "disqus": ""
+  },
+  "socialnetwork": {
+    "email": "mnislamshihan@gmail.com",
+    "github": "mnishihan",
+    "twitter": "mnishihan",
+    "facebook": "mnishihan",
+    "googleplus": "",
+    "instagram": "",
+    "pinterest": "",
+    "flickr": "",
+    "linkedin": "mnishihan",
+    "stackoverflow": ""
   }
 }
