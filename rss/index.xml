@@ -1,1 +1,85 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[I dream of dream]]></title><description><![CDATA[My personal space for writing & online sharing of thoughts]]></description><link>https://mnishihan.github.io</link><generator>RSS for Node</generator><lastBuildDate>Sun, 11 Jun 2017 19:10:23 GMT</lastBuildDate><atom:link href="https://mnishihan.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl></channel></rss>
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[I dream of dream]]></title><description><![CDATA[My personal space for writing & online sharing of thoughts]]></description><link>https://mnishihan.github.io</link><generator>RSS for Node</generator><lastBuildDate>Sun, 11 Jun 2017 23:45:41 GMT</lastBuildDate><atom:link href="https://mnishihan.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Installing PHP erlang bridge on centos 6.2]]></title><description><![CDATA[<div class="paragraph">
+<p>This post is kinda a reference &amp; checklist for me to be used in future, as the installation of <a href="http://code.google.com/p/mypeb/">PHP Erlang Bridge</a> (peb) wasn’t as simple to follow the installation steps stated in INSTALL file in the source package. If you’ve come across this page by any chance, may be it will be helpful for you as well.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Step 1: Install erlang and this is really easy</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">sudo yum install erlang</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Step 2: Install php-devel package if you already didn’t.  This package will provide the phpize tool that you’ll require to build the peb and any other php extensions) from source</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">sudo yum install php-devel</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Step 3: Download and extract latest source archive of peb from <a href="http://code.google.com/p/mypeb/downloads/list">here</a> and phpize</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">wget http://mypeb.googlecode.com/files/peb-0.20b.tar.gz
+tar -xzf peb-0.20b.tar.gz
+cd peb_release
+phpize</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Step 4: Now comes the tricky part, i.e. to run configure with special parameters. Find out where is the erl_interface package is installed, which was installed with erlang as a dependency and provides all the library and header files that will be required to configure the build script for peb. Get the first line (the installation path of erl_interface) of following command and use it in following step. I will refer this as <code>{$ERL_INTERFACE_PATH}</code> in the next step</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">rpm -ql erlang-erl_interface</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Step 5: Execute following command based on the architecture of your CentOS installation</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash"># use this if you have 64 bit architecture
+./configure CC="gcc -m64 -L{$ERL_INTERFACE_PATH}/lib -I{$ERL_INTERFACE_PATH}/include" --enable-peb
+
+# use this if you have 32 bit architecture
+./configure CC="gcc -L{$ERL_INTERFACE_PATH}/lib -I{$ERL_INTERFACE_PATH}/include" --enable-peb</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Step 6: Now follow the rest of the steps mentioned in INSTALL document to install the php extension.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">make
+sudo make install</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Step 7: Edit php.ini to add the following line</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-ini" data-lang="ini">extension=peb.so</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Step 8: Restart your web server (usually apache httpd)</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">sudo service httpd restart</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Now you have installed peb extension and ready to start play with examples explained in <a href="http://code.google.com/p/mypeb/w/list">peb wiki</a></p>
+</div>
+<div class="paragraph">
+<p>Happy erlanging with php :-)</p>
+</div>]]></description><link>https://mnishihan.github.io/2012/09/20/Installing-PHP-erlang-bridge-on-centos-62.html</link><guid isPermaLink="true">https://mnishihan.github.io/2012/09/20/Installing-PHP-erlang-bridge-on-centos-62.html</guid><category><![CDATA[bridge]]></category><category><![CDATA[erlang]]></category><category><![CDATA[peb]]></category><category><![CDATA[php]]></category><dc:creator><![CDATA[M N Islam Shihan]]></dc:creator><pubDate>Thu, 20 Sep 2012 00:00:00 GMT</pubDate></item></channel></rss>
