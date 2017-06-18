@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Vuex Quick Ref</title>
+    <meta name="description" content="" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="https://mnishihan.github.io/favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="//mnishihan.github.io/themes/casper/assets/css/screen.css?v=1497785824763" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+
+    <link rel="canonical" href="https://mnishihan.github.io/2017/06/18/Vuex-Quick-Ref.html" />
+    <meta name="referrer" content="origin" />
+    
+    <meta property="og:site_name" content="I dream of dream" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Vuex Quick Ref" />
+    <meta property="og:description" content="Store Instanciated with Vuex.Store(options) constructor Injected into child components as this.$store to enable easy access Properties of options object are described below. state state is the reactive data stored into a vuex store and very similar to the data property in options for component constructor. state variables" />
+    <meta property="og:url" content="https://mnishihan.github.io/2017/06/18/Vuex-Quick-Ref.html" />
+    <meta property="article:published_time" content="2017-06-18T00:00:00.000Z" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Vuex Quick Ref" />
+    <meta name="twitter:description" content="Store Instanciated with Vuex.Store(options) constructor Injected into child components as this.$store to enable easy access Properties of options object are described below. state state is the reactive data stored into a vuex store and very similar to the data property in options for component constructor. state variables" />
+    <meta name="twitter:url" content="https://mnishihan.github.io/2017/06/18/Vuex-Quick-Ref.html" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "I dream of dream",
+    "author": {
+        "@type": "Person",
+        "name": "M N Islam Shihan",
+        "image": "https://avatars1.githubusercontent.com/u/1173288?v=3",
+        "url": "https://mnishihan.github.io/author/mnishihan/"
+    },
+    "headline": "Vuex Quick Ref",
+    "url": "https://mnishihan.github.io/2017/06/18/Vuex-Quick-Ref.html",
+    "datePublished": "2017-06-18T00:00:00.000Z",
+    "description": "Store Instanciated with Vuex.Store(options) constructor Injected into child components as this.$store to enable easy access Properties of options object are described below. state state is the reactive data stored into a vuex store and very similar to the data property in options for component constructor. state variables"
+}
+    </script>
+
+    <meta name="generator" content="HubPress" />
+    <link rel="alternate" type="application/rss+xml" title="I dream of dream" href="https://mnishihan.github.io/rss/" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/atom-one-dark.min.css">
+</head>
+<body class="post-template nav-closed">
+
+    
+
+    <div class="site-wrapper">
+
+        
+
+
+<header class="main-header post-head no-cover">
+    <nav class="main-nav  clearfix">
+        
+    </nav>
+</header>
+
+<main class="content" role="main">
+    <article class="post">
+
+        <header class="post-header">
+            <h1 class="post-title">Vuex Quick Ref</h1>
+            <section class="post-meta">
+                <time class="post-date" datetime="2017-06-18">18 June 2017</time> 
+            </section>
+        </header>
+
+        <section class="post-content">
+            <div class="sect1">
+<h2 id="_store">Store</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Instanciated with <code><code>Vuex.Store(options)</code></code> constructor</p>
+</li>
+<li>
+<p>Injected into child components as <code><code>this.$store</code></code> to enable easy access</p>
+</li>
+<li>
+<p>Properties of <code><code>options</code></code> object are described below.</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="_state">state</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><code><code>state</code></code> is the reactive data stored into a vuex <code><code>store</code></code> and very similar to the <code><code>data</code></code> property in options for component constructor.</p>
+</li>
+<li>
+<p><code><code>state</code></code> variables are usually exposed as <code><code>computed</code></code> properties to enable easy access within components.</p>
+</li>
+<li>
+<p><code><code>mapState</code></code></p>
+</li>
+<li>
+<p>A utility function to mix &amp; expose <code><code>state</code></code> variables as <code><code>computed</code></code> properties in components.</p>
+</li>
+<li>
+<p>Imported as <code><code>import { mapState } from 'vuex'</code></code></p>
+</li>
+<li>
+<p>Returns object, so it can be used to merge with local <code><code>computed</code></code> properties of components using [object spread](#) syntax,  i.e. <code><code>&#8230;&#8203;mapState({})</code></code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_getters">getters</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><code><code>getters</code></code> is for vuex <code><code>store</code></code> what <code><code>computed</code></code> is for components.</p>
+</li>
+<li>
+<p><code><code>getters</code></code> are also exposed through <code><code>computed</code></code> properties to enable easy access within components.</p>
+</li>
+<li>
+<p>Signature of <strong>getter</strong> is <code><code>getterName: function(state, getters) { /** &#8230;&#8203; */ }</code></code></p>
+</li>
+<li>
+<p>Arguments can also be passed to getters by returning a function. This is particularly useful when querying an array in the store is required.</p>
+</li>
+<li>
+<p><code><code>mapGetters</code></code></p>
+</li>
+<li>
+<p>A utility function to mix &amp; expose <code><code>getters</code></code> in <code><code>computed</code></code> within components.</p>
+</li>
+<li>
+<p>Imported as <code><code>import { mapGetters } from 'vuex'</code></code></p>
+</li>
+<li>
+<p>Returns object, so it can be used to merge with local <code><code>computed</code></code> properties of components using [object spread](#) syntax,  i.e. <code><code>&#8230;&#8203;mapGetters({})</code></code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_mutations">mutations</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><code><code>mutations</code></code> is an object to define <strong>mutator</strong> methods in vuex <code><code>store</code></code> which are allowed &amp; responsible to modify store&#8217;s <code><code>state</code></code>.</p>
+</li>
+<li>
+<p>It is not permissible to modify <code><code>state</code></code> directly in vuex stores, so <strong>mutators</strong> are needed.</p>
+</li>
+<li>
+<p>Signature of <strong>mutator</strong> is <code><code>mutatorName: function(state, [payload]) { /** &#8230;&#8203; */ }</code></code></p>
+</li>
+<li>
+<p>To invoke a <strong>mutator</strong>, you need to call <code><code>store.commit(mutation, [payload])</code></code> with its <code><code>name</code></code> and it&#8217;s optional <code><code>payload</code></code>.</p>
+</li>
+<li>
+<p><code><code>mutations</code></code> must be synchronous.</p>
+</li>
+<li>
+<p><code><code>mapMutations</code></code></p>
+</li>
+<li>
+<p>A utility function to mix &amp; expose <code><code>mutations</code></code> as component <code><code>methods</code></code> that invokes respective mutation via <code><code>store.commit</code></code>.</p>
+</li>
+<li>
+<p>Imported as <code><code>import { mapMutations } from 'vuex'</code></code></p>
+</li>
+<li>
+<p>Returns object, so it can be used to merge with local <code><code>methods</code></code> option of components using [object spread](#) syntax,  i.e. <code><code>&#8230;&#8203;mapMutations({})</code></code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_actions">actions</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Actions are similar to mutations, the differences being that:</p>
+</li>
+<li>
+<p>Instead of mutating the state, actions commit mutations.</p>
+</li>
+<li>
+<p>Actions can contain arbitrary asynchronous operations.</p>
+</li>
+<li>
+<p>Action handlers receive a <code><code>context</code></code> object which exposes the same set of methods/properties on the <code><code>store</code></code> instance, so you can call <code><code>context.commit</code></code> to commit a mutation, or access the <code><code>state</code></code> and <code><code>getters</code></code> via <code><code>context.state</code></code> and <code><code>context.getters</code></code> respectively.</p>
+</li>
+<li>
+<p>Actions are triggered with the <code><code>store.dispatch(actionName, payload)</code></code> method.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+        </section>
+
+        <footer class="post-footer">
+
+
+            <figure class="author-image">
+                <a class="img" href="https://mnishihan.github.io/author/mnishihan/" style="background-image: url(https://avatars1.githubusercontent.com/u/1173288?v&#x3D;3)"><span class="hidden">M N Islam Shihan's Picture</span></a>
+            </figure>
+
+            <section class="author">
+                <h4><a href="https://mnishihan.github.io/author/mnishihan/">M N Islam Shihan</a></h4>
+
+                    <p>Read <a href="https://mnishihan.github.io/author/mnishihan/">more posts</a> by this author.</p>
+                <div class="author-meta">
+                    <span class="author-location icon-location">Dhaka, Bangladesh</span>
+                    
+                </div>
+            </section>
+
+
+            <section class="share">
+                <h4>Share this post</h4>
+                <a class="icon-twitter" href="https://twitter.com/intent/tweet?text=Vuex%20Quick%20Ref&amp;url=https://mnishihan.github.io/2017/06/18/Vuex-Quick-Ref.html"
+                    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <span class="hidden">Twitter</span>
+                </a>
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://mnishihan.github.io/2017/06/18/Vuex-Quick-Ref.html"
+                    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <span class="hidden">Facebook</span>
+                </a>
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://mnishihan.github.io/2017/06/18/Vuex-Quick-Ref.html"
+                   onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <span class="hidden">Google+</span>
+                </a>
+            </section>
+
+        </footer>
+
+
+    </article>
+
+</main>
+
+<aside class="read-next">
+</aside>
+
+
+
+        <footer class="site-footer clearfix">
+            <section class="copyright"><a href="https://mnishihan.github.io">I dream of dream</a> &copy; 2017</section>
+            <section class="poweredby">Proudly published with <a href="http://hubpress.io">HubPress</a></section>
+        </footer>
+
+    </div>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js?v="></script> 
+      <script type="text/javascript">
+        jQuery( document ).ready(function() {
+          // change date with ago
+          jQuery('ago.ago').each(function(){
+            var element = jQuery(this).parent();
+            element.html( moment(element.text()).fromNow());
+          });
+        });
+
+        hljs.initHighlightingOnLoad();
+      </script>
+       
+    <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+
+    <script type="text/javascript" src="//mnishihan.github.io/themes/casper/assets/js/jquery.fitvids.js?v=1497785824763"></script>
+    <script type="text/javascript" src="//mnishihan.github.io/themes/casper/assets/js/index.js?v=1497785824763"></script>
+
+</body>
+</html>
