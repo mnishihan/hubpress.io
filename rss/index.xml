@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[I dream of dream]]></title><description><![CDATA[My personal space for writing & online sharing of thoughts]]></description><link>https://mnishihan.github.io</link><generator>RSS for Node</generator><lastBuildDate>Sun, 18 Jun 2017 11:37:04 GMT</lastBuildDate><atom:link href="https://mnishihan.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Vuex Quick Ref]]></title><description><![CDATA[<div class="sect1">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[I dream of dream]]></title><description><![CDATA[My personal space for writing & online sharing of thoughts]]></description><link>https://mnishihan.github.io</link><generator>RSS for Node</generator><lastBuildDate>Sun, 18 Jun 2017 11:40:11 GMT</lastBuildDate><atom:link href="https://mnishihan.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Vuex Quick Ref]]></title><description><![CDATA[<div class="sect1">
 <h2 id="_store">Store</h2>
 <div class="sectionbody">
 <div class="ulist">
@@ -127,7 +127,7 @@
 </div>
 </div>
 </div>
-</div>]]></description><link>https://mnishihan.github.io/2017/06/18/Vuex-Quick-Ref.html</link><guid isPermaLink="true">https://mnishihan.github.io/2017/06/18/Vuex-Quick-Ref.html</guid><dc:creator><![CDATA[M N Islam Shihan]]></dc:creator><pubDate>Sun, 18 Jun 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[Installing PHP erlang bridge on centos 6.2]]></title><description><![CDATA[<div class="paragraph">
+</div>]]></description><link>https://mnishihan.github.io/2017/06/18/Vuex-Quick-Ref.html</link><guid isPermaLink="true">https://mnishihan.github.io/2017/06/18/Vuex-Quick-Ref.html</guid><category><![CDATA[JavaScricpt]]></category><category><![CDATA[vuejs]]></category><category><![CDATA[vuex]]></category><dc:creator><![CDATA[M N Islam Shihan]]></dc:creator><pubDate>Sun, 18 Jun 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[Installing PHP erlang bridge on centos 6.2]]></title><description><![CDATA[<div class="paragraph">
 <p>This post is kinda a reference &amp; checklist for me to be used in future, as the installation of <a href="http://code.google.com/p/mypeb/">PHP Erlang Bridge</a> (peb) wasn’t as simple to follow the installation steps stated in INSTALL file in the source package. If you’ve come across this page by any chance, may be it will be helpful for you as well.</p>
 </div>
 <div class="ulist">
